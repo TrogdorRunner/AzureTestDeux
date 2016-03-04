@@ -1,0 +1,17 @@
+body {
+    background-color: lightcyan;
+    font-family: "Comic Sans MS", "Comic Sans";
+}
+
+h1 {
+    color: #8000ff;
+    font-variant: small-caps;
+}
+
+h2 {
+    color: #8000ff;
+}
+
+p  {
+    font-family: "courier";
+}
