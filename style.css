@@ -1,17 +1,110 @@
+html {
+    margin: auto;
+}
+
+header {
+    float: top;
+}
+
 body {
-    background-color: lightcyan;
-    font-family: "Comic Sans MS", "Comic Sans";
+    background-image: url("crowd.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+
+    vertical-align: middle;
 }
 
-h1 {
-    color: #8000ff;
-    font-variant: small-caps;
+img {
+    display: block;
+    margin: auto;
 }
 
-h2 {
-    color: #8000ff;
+.left {
+    width: 35%;
+    float: left;
+    text-align: right;
+}
+.right {
+    width: 60%;
+    margin-left: 20px;
+    float:left;
 }
 
-p  {
-    font-family: "courier";
+.resultsrow {
+    width: auto;
+    margin: 0 auto;
+    /*currently unused*/
+}
+
+.results {
+    float: left;
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    background-color: #FA8B60;
+    height: 250px;
+    width: 300px;
+    padding: 15px;
+    border: 10px solid #ef6d3b;
+    margin: 25px;
+}
+
+.description {
+    padding-left: 15px;
+}
+
+#eventtitle {
+    font-size: 200%;
+}
+
+#search {
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    background-color: #FA8B60;
+    height: 400px;
+    width: 430px;
+    padding: 25px;
+    margin: auto;
+    border: 10px solid #ef6d3b;
+}
+
+#smallsearch {
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    background-color: #FA8B60;
+    height: auto;
+    width: 400px;
+    padding: 25px;
+    border: 10px solid #ef6d3b;
+}
+
+#smallresults {
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    background-color: #FA8B60;
+    height: auto;
+    width: auto;
+    padding: 15px;
+    border: 10px solid #ef6d3b;
+}
+
+#largeresults {
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    background-color: #FA8B60;
+    height: auto;
+    width: auto;
+    padding: 25px;
+    border: 10px solid #ef6d3b;
+}
+
+#travelaccommodation {
+    font-family: "Century Gothic", sans-serif;
+    font-weight: bold;
+    background-color: #FA8B60;
+    height: auto;
+    width: auto;
+    padding: 25px;
+    border: 10px solid #ef6d3b;
 }
