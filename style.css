@@ -1,5 +1,14 @@
 html {
     margin: auto;
+
+    background-color: #68837f;
+    background-image: url("crowd.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+
+    min-height: 100%;
 }
 
 header {
@@ -8,12 +17,6 @@ header {
 }
 
 body {
-    background-image: url("crowd.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-
     vertical-align: middle;
 }
 
