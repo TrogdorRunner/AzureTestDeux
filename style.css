@@ -4,16 +4,21 @@ html {
 
 header {
     float: top;
+    min-width: 855px;
 }
 
 body {
-    background-image: url("crowd.png");
+    background-image: url("crowd.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
 
     vertical-align: middle;
+}
+
+p {
+    margin: 0px 0px;
 }
 
 img {
@@ -97,6 +102,7 @@ img {
     width: auto;
     padding: 25px;
     border: 10px solid #ef6d3b;
+    min-width: 855px;
 }
 
 #travelaccommodation {
