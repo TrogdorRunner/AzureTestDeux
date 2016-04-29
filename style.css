@@ -1,28 +1,49 @@
 html {
-    margin: auto;
 
+/*PAGE BACKGROUND*/
     background-color: #68837f;
     background-image: url("crowd.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    /* UNIVERSAL FONT SETTINGS*/
+	font-family: "Century Gothic", sans-serif;
+	font-weight: bold;
 
-    /*fix the height of the background for mobile devices*/
     min-height: 100%;
 }
 
 header {
     float: top;
-    min-width: 855px;
+    min-height: 205px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body {
+    width: auto;
     vertical-align: middle;
+    margin: 10px 10px 10px 10px;
 }
 
-p {
-    margin: 0px 0px;
+p, h1, h2, h3 {
+    margin: 0 0;
+}
+
+h1 {
+    font-size: 200%;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 175%;
+}
+
+h3 {
+    font-size: 125%;
+    padding-bottom: 10px;
 }
 
 img {
@@ -30,122 +51,139 @@ img {
     margin: auto;
 }
 
-.left {
+.left, #mainLogo, #map {
     width: 35%;
+}
+
+.left, .right, .mainDetail, .optionslist, #mainLogo, #map, .logo {
     float: left;
-    text-align: right;
+}
+
+#search, #smallsearch, #largeresults, .choiceTab {
+	padding: 25px;
+}
+
+.results, .choiceTab, #search, #smallsearch, #smallresults, #largeresults {
+	background-color: #FA8B60;
+	border: 10px solid #ef6d3b;
+}
+
+#smallsearch, #smallresults, .choiceTab, .results {
+	height: auto;
+}
+
+.left {
+	text-align: right;
 }
 
 .right {
     width: 60%;
     margin-left: 20px;
-    float:left;
 }
 
-.resultsrow {
-    width: auto;
-    margin: 0 auto;
-    /*currently unused*/
+.date, .price, .band, .location, .travelChoices {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.mainDetail {
+	font-size: 175%;
+	width: 33%;
+	text-align: center;
 }
 
 .results {
-    float: left;
-    font-family: "Century Gothic", sans-serif;
-    font-weight: bold;
-    background-color: #FA8B60;
-    height: 250px;
     width: 300px;
     padding: 15px;
-    border: 10px solid #ef6d3b;
-    margin: 25px;
-}
-
-.description {
-    padding-left: 15px;
-    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 23px;
+    margin-left: 23px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 #search {
-    font-family: "Century Gothic", sans-serif;
-    font-weight: bold;
-    background-color: #FA8B60;
     height: 400px;
     width: 430px;
-    padding: 25px;
     margin: auto;
-    border: 10px solid #ef6d3b;
 }
 
 #smallsearch {
-    font-family: "Century Gothic", sans-serif;
-    font-weight: bold;
-    background-color: #FA8B60;
-    height: auto;
-    width: 400px;
-    padding: 25px;
-    border: 10px solid #ef6d3b;
+    width: 435px;
+    float: right;
 }
 
 #smallresults {
-    font-family: "Century Gothic", sans-serif;
-    font-weight: bold;
-    background-color: #FA8B60;
-    height: auto;
-    width: auto;
+    width: 455px;
     padding: 15px;
-    border: 10px solid #ef6d3b;
+    float: right;
 }
 
 #largeresults {
-    font-family: "Century Gothic", sans-serif;
-    font-weight: bold;
-    background-color: #FA8B60;
-    height: 450px;
-    width: auto;
-    padding: 25px;
-    border: 10px solid #ef6d3b;
-    min-width: 855px;
+    height: auto;
+    min-width: 805px;
+    max-width: 1000px;
+    margin: 25px;
 }
 
 #map {
-    width: 35%;
-    float: left;
     min-width: 300px;
     max-width: 425px;
 }
 
-#travelaccommodationfull {
+#allChoices {
     width: 810px;
     margin-left:auto;
     margin-right:auto;
 }
 
-@media screen and (max-width: 800px){
-    #travelaccommodationfull {
-        width: 410px;
-        margin-left:auto;
-        margin-right:auto;
-    }
-}
-
-
-
-.travelaccommodation {
-    font-family: "Century Gothic", sans-serif;
-    font-weight: bold;
-    background-color: #FA8B60;
-    height: auto;
+.choiceTab {
     width: 320px;
-    padding: 25px;
-    border: 10px solid #ef6d3b;
 }
 
 .optionslist {
-    float: left;
     text-align: left;
 }
 
 .priceslist {
     margin-left: 20px;
     text-align: right;
+}
+
+.logo {
+    height: 100%;
+}
+
+svg {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:100%;
+    height:20px;
+}
+
+#allResults {
+    max-width: 1600px;
+    margin: 25px auto 25px auto;
+}
+
+@media screen and (max-width: 1599px) {
+    #allResults {
+        max-width: 1200px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    #allResults {
+        max-width: 800px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #largeresults {
+        margin: 25px auto 25px auto;
+    }
+}
+
+#resultPage {
+    display: none;
 }

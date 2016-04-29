@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
     <head>
         <meta charset="UTF-8">
         <title>Mutra: Music, Travel, Accommodation</title>
@@ -12,6 +11,7 @@
               href="Icon_Logo.png">
         <script src="//code.jquery.com/jquery-1.10.2.js"></script>
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
         <script>
             $(function() {
                 $("#datepickerFrom").datepicker();
@@ -20,64 +20,181 @@
         </script>
     </head>
 
-
     <body>
 
-        <div style="float: top;">
-            <img src="Mutra_Logo.png" height="290" width="500">
-        </div>
+    <!-- INDEX PAGE -->
 
-        <div id="search">
-            <div style="float: top; height: 67%">
-                <div>
-                    <div class="left">Your Location:</div>
-                    <div class="right"><input type="text" name="location"></div>
-                </div>
-                <br><br>
-                <div>
-                    <div class="left">Travel Options:</div>
-                    <div class="right">
+        <content id="indexPage">
+            <header style="width:500px">
+                <img src="Mutra_Logo.png" height="290" width="500">
+            </header>
+            <div id="search">
+                <div style="height: 67%">
+                    <p class="left band">Band:</p>
+                    <p class="right band"><input type="text" name="bandTextBox" id="bandTextBox"></p>
+                    <p class="left travelChoices">Travel Options:</p>
+
+                    <!-- Transport Checkboxes -->
+
+                    <div class="right travelChoices">
                         <table>
                             <tr>
-                                <td align="right">Bus<input type="checkbox" name="transport" value="Bus"></td>
-                                <td align="right">Car<input type="checkbox" name="transport" value="Car"></td>
+                                <td align="right">Bus<input type="checkbox" name="busCheckBox" id="busCheckBox" value="Bus"></td>
+                                <td align="right">Car<input type="checkbox" name="carCheckBox" id="carCheckBox" value="Car"></td>
                             </tr>
                             <tr>
-                                <td align="right">Train<input type="checkbox" name="transport" value="Train"></td>
-                                <td align="right">Plane<input type="checkbox" name="transport" value="Plane"></td>
+                                <td align="right">Train<input type="checkbox" name="trainCheckBox" id="trainCheckBox" value="Train"></td>
+                                <td align="right">Plane<input type="checkbox" name="planeCheckBox" id="planeCheckBox" value="Plane"></td>
                             </tr>
                         </table>
                     </div>
+                    <!-- Your Location -->
+                    <p class="left location">Your Location:</p>
+                    <p class="right location"><input type="text" name="locationTextBox" id="locationTextBox"></p>
+                    <!-- Dates -->
+                    <p class="left date">Date:</p>
+                    <p class="right date"><input type="date" name="dateFrom" id="datepickerFrom" size="8">
+                        To: <input type="date" name="dateTo" id="datepickerTo" size="8"></p>
+                    <!-- Prices -->
+                    <p class="left price">Price:</p>
+                    <p class="right price"><input type="text" name="priceFrom" size="8">
+                        To: <input type="text" name="priceTo" size="8"></p>
                 </div>
-                <br><br>
-                <br><br>
-                <div>
-                    <div class="left">Band:</div>
-                    <div class="right"><input type="text" name="band"></div>
-                </div>
-                <br><br>
-                <div>
-                    <div class="left">Date:</div>
-                    <div class="right"><input type="date" name="datefrom" id="datepickerFrom" size="8">
-                        To: <input type="date" name="dateto" id="datepickerTo" size="8"></div>
-                </div>
-                <br><br>
-                <div>
-                    <div class="left">Price:</div>
-                    <div class="right"><input type="text" name="pricefrom" size="6">
-                        To: <input type="text" name="priceto" size="6"></div>
+                <!-- Submit/search button -->
+                <div style="height: 27%">
+                    <map id="imgmapsearch1" name="imgmapsearch1"></map>
+                    <img id="submit" src="search.png" height="100" width="100" align="center" usemap="#imgmapsearch">
                 </div>
             </div>
+            <script src="ticketmaster.js"></script>
+        </content>
 
-            <!--search button-->
-            <div style="float: bottom; height: 27%">
-                <map id="imgmapsearch" name="imgmapsearch">
-                    <area coords="49,49,51" href="results.html" shape="circle"/>
+    <!-- RESULTS PAGE -->
+
+        <content id="resultPage">
+            <header>
+                <div>
+                    <map id="imgmapsearch2" name="imgmapsearch2">
+                        <area coords="0,0,250,145" href="index.html" shape="rect"/>
+                    </map>
+                    <div class="logo"><img src="Mutra_Logo.png" height="145" width="250" usemap="#imgmapsearch" style="margin:30px 0px 30px 0px;"></div>
+                    <section id="smallsearch">
+                        <div>
+                            <!-- Band Name -->
+                            <p class="left band">Band:</p>
+                            <p class="right band"><input type="text" name="bandTextBox" id="bandTextBox2"></p>
+                            <!-- Your transport -->
+                            <p class="left travelChoices">Travel Options:</p>
+                            <div class="right travelChoices">
+                                <!-- transport check boxes -->
+                                <table>
+                                    <tr>
+                                        <td align="right">Bus<input type="checkbox" name="transport" value="Bus"></td>
+                                        <td align="right">Car<input type="checkbox" name="transport" value="Car"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">Train<input type="checkbox" name="transport" value="Train"></td>
+                                        <td align="right">Plane<input type="checkbox" name="transport" value="Plane"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div style="clear:both"></div>
+            </header>
+            <svg>
+                <rect width="100%" height="20" style="fill:rgb(0,0,0); opacity:0.3;" />
+            </svg>
+            <div id="allResults">
+            </div>
+            <div style="clear:both"></div>
+        </content>
+
+    <!-- MORE INFO PAGE -->
+
+        <content id="moreInfoPage">
+            <header>
+                <map id="imgmapsearch3" name="imgmapsearch3">
+                    <area coords="0,0,250,145" href="index.html" shape="rect"/>
                 </map>
-                <img src="search.png" height="100" width="100" align="center" usemap="#imgmapsearch">
+                <div class="logo"><img src="Mutra_Logo.png" height="145" width="250" usemap="#imgmapsearch" style="margin:30px 0px 30px 0px;"></div>
+                <!-- Basic Details -->
+                <section id="smallresults">
+                    <section class="left">
+                        <h3 class="eventName"></h3>
+                        <h3 class="cityName"></h3>
+                        <h3 class="artistName"></h3>
+                        <h3 class="date"></h3>
+                    </section>
+                    <section>
+                        <img width="100%" style="margin-bottom: 10px;" id="eventImage">
+                    </section>
+                </section>
+                <div style="clear:both"></div>
+            </header>
+            <svg style="margin-top: 10px;" width="100%" height="20">
+                <rect width="100%" height="20" style="fill:rgb(0,0,0); opacity:0.3;" />
+            </svg>
+            <div id="largeresults">
+                <div>
+                    <section class="right">
+                        <h1 class="eventName"></h1>
+                        <section id="artists">
+                        </section>
+                    </section>
+                </div>
+                <div style="clear: both"></div>
+                <!-- Dynamically changing information -->
+                <div style="width: 100%">
+                    <h2 class="mainDetail cityName"></h2>
+                    <h2 class="mainDetail date"></h2>
+                    <h2 class="mainDetail">price</h2>
+                </div>
+                <div>
+                    <svg>
+                        <rect width="100%" height="20" style="fill:rgb(0,0,0); opacity:0.3;" />
+                    </svg>
+                </div>
+                <div id="allChoices">
+                    <div style="float: left;" class="choiceTab">
+                        <h2>Travel</h2>
+                        <section class="optionslist">
+                            <form>
+                                <p><input type="radio" name="firstname">option 1</p>
+                                <p><input type="radio" name="firstname">option 2</p>
+                                <p><input type="radio" name="firstname">option 3</p>
+                                <p><input type="radio" name="firstname">option 4</p>
+                            </form>
+                        </section>
+                        <section class="priceslist">
+                            <p>price</p>
+                            <p>price</p>
+                            <p>price</p>
+                            <p>price</p>
+                        </section>
+                    </div>
+                    <div style="float: right;" class="choiceTab">
+                        <h2>Accommodation</h2>
+                        <section class="optionslist">
+                            <form>
+                                <p><input type="radio" name="firstname">option 1</p>
+                                <p><input type="radio" name="firstname">option 2</p>
+                                <p><input type="radio" name="firstname">option 3</p>
+                                <p><input type="radio" name="firstname">option 4</p>
+                            </form>
+                        </section>
+                        <section class="priceslist">
+                            <p>price</p>
+                            <p>price</p>
+                            <p>price</p>
+                            <p>price</p>
+                        </section>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
             </div>
-        </div>
-
+        </content>
     </body>
 
 </html>
