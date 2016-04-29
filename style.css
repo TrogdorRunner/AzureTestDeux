@@ -92,6 +92,10 @@ img {
 	text-align: center;
 }
 
+.moreInfo {
+    color: #7F36A1;
+}
+
 .results {
     width: 300px;
     padding: 15px;
@@ -182,8 +186,4 @@ svg {
     #largeresults {
         margin: 25px auto 25px auto;
     }
-}
-
-#resultPage {
-    display: none;
 }

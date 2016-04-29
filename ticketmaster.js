@@ -39,11 +39,12 @@ $('#submit').click(function() {
             url += "&attractionId=" + bandId;
             $.getJSON(url, function (data) {
                 var resultsWidth = 0;
-                $('#allResults').innerHTML = "";
+                $('#allResults').empty();
                 console.log(data);
                 for (var i = 0; i < data["_embedded"].events.length; i++) {
                     eventImage = data["_embedded"].events[i].images[0].url;
                     eventBandNames = "";
+                    variousBands = "";
                     for (var j = 0; j < data["_embedded"].events[i]["_embedded"].attractions.length; j++) {
                         if(data["_embedded"].events[i]["_embedded"].attractions.length === 1) {
                             variousBands = eventBandNames += data["_embedded"].events[i]["_embedded"].attractions[j].name;
@@ -78,11 +79,11 @@ $('#submit').click(function() {
                     document.getElementsByClassName("eventName")[1].innerHTML = document.getElementById(resultId).getElementsByTagName("h2")[0].innerHTML;
                     document.getElementsByClassName("cityName")[0].innerHTML = document.getElementById(resultId).getElementsByClassName("eventTabDetails")[0].innerHTML;
                     document.getElementsByClassName("cityName")[1].innerHTML = document.getElementById(resultId).getElementsByClassName("eventTabDetails")[0].innerHTML;
-                    document.getElementsByClassName("date")[0].innerHTML = document.getElementById(resultId).getElementsByClassName("eventTabDetails")[2].innerHTML;
-                    document.getElementsByClassName("date")[1].innerHTML = document.getElementById(resultId).getElementsByClassName("eventTabDetails")[2].innerHTML;
+                    document.getElementsByClassName("date")[2].innerHTML = document.getElementById(resultId).getElementsByClassName("eventTabDetails")[2].innerHTML;
+                    document.getElementsByClassName("date")[3].innerHTML = document.getElementById(resultId).getElementsByClassName("eventTabDetails")[2].innerHTML;
                     document.getElementById("artists").innerHTML = document.getElementById(resultId).getElementsByClassName("eventTabDetails")[3].innerHTML;
                     document.getElementById("eventImage").setAttribute("src", document.getElementById(resultId).getElementsByClassName("eventImage")[0].getAttribute("src"));
-                    document.getElementById("eventImage").setAttribute("width", 300);
+                    document.getElementById("eventImage").setAttribute("width", 280);
                     document.getElementsByClassName("artistName")[0].innerHTML = document.getElementById(resultId).getElementsByClassName("eventTabDetails")[4].innerHTML;
                 });
                 });
